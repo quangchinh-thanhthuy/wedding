@@ -1,0 +1,179 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Noto Serif", serif;
+}
+
+.custom-shape-divider-bottom-1717943341 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+}
+
+.custom-shape-divider-bottom-1717943341 svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 123px;
+}
+
+.custom-shape-divider-bottom-1717943341 .shape-fill {
+  fill: #ffffff;
+}
+
+.custom-shape-divider-bottom-21 {
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+}
+
+.custom-shape-divider-bottom-21 svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 123px;
+}
+
+.custom-shape-divider-bottom-21 .shape-fill {
+  fill: #ffffff;
+}
+
+/* Layer 2 */
+.custom-shape-divider-top-1717948740 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+}
+
+.custom-shape-divider-top-1717948740 svg {
+  position: relative;
+  display: block;
+  width: calc(110% + 1.3px);
+  height: 120px;
+}
+
+.custom-shape-divider-top-1717948740 .shape-fill {
+  fill: #ffffff;
+}
+
+#music-control {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  z-index: 1000;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: black;
+  border-radius: 999px;
+}
+
+#music-control i {
+  display: block;
+  font-size: 18px;
+  color: #fafafa;
+}
+
+.thumbnail-list {
+  display: flex;
+  gap: 10px;
+  padding: 10px;
+  overflow-x: auto;
+  scrollbar-width: thin;
+}
+
+.thumbnail {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.thumbnail:hover {
+  transform: scale(1.1);
+}
+
+#comment-box::-webkit-scrollbar {
+  display: none;
+}
+
+#comment-box {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+.comment-text {
+  display: flex;
+  flex-direction: column;
+}
+.name {
+  font-size: 18px;
+  font-weight: bold;
+}
+.text {
+  font-size: 16px;
+}
+
+.custom-shape-divider-top-1719140290 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.custom-shape-divider-top-1719140290 svg {
+  position: relative;
+  display: block;
+  width: calc(117% + 1.3px);
+  height: 92px;
+}
+
+.custom-shape-divider-top-1719140290 .shape-fill {
+  fill: #ffffff;
+}
+
+.custom-shape-divider-bottom-1719140623 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.custom-shape-divider-bottom-1719140623 svg {
+  position: relative;
+  display: block;
+  width: calc(129% + 1.3px);
+  height: 73px;
+}
+
+.custom-shape-divider-bottom-1719140623 .shape-fill {
+  fill: #ffffff;
+}

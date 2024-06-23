@@ -3,17 +3,43 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Chính và Thủy</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
     />
-    <link href="./output.css" rel="stylesheet" />
-    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link rel="stylesheet" href="./src/styles/index.css" />
+
+    <script src="./src/scripts/scripts.js" defer></script>
+    <script src="./src/scripts/photo.js" defer></script>
+    <script src="./src/scripts/comment.js" defer></script>
+    <script src="./src/scripts/music.js" defer></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   </head>
   <body>
+    <!-- Music control icon -->
+    <div id="music-control" onclick="toggleMusic()">
+      <i class="fa-solid fa-volume-up" id="music-icon"></i>
+    </div>
+
+    <!-- Hidden audio element -->
+    <audio id="background-music" loop>
+      <source src="./assets/photograph.mp3" type="audio/mp3" />
+      Your browser does not support the audio element.
+    </audio>
+
     <div class="flex flex-col items-center">
       <div class="w-full flex flex-col items-center bg-neutral-100">
         <picture id="top-image"
@@ -92,7 +118,7 @@
         >
           Chính & Thủy
         </div>
-        <div class="text-2xl tracking-wider pb-2">10.10.2024</div>
+        <div class="text-2xl tracking-wider pb-2">28.07.2024</div>
         <div class="py-8">
           <img
             src="https://www.theknot.com/tk-media/images/ec540d62-dd40-4000-b757-0abe4e7d95f2~rt_auto-cr_0.472.6016.3479-rs_1280.h?ordering=explicit"
@@ -131,6 +157,7 @@
         </div>
       </section>
 
+      <!-- CO DAU CHU RE -->
       <section class="w-full flex flex-col items-center pt-10">
         <div class="flex flex-col items-center max-w-3xl p-10">
           <h2 class="text-3xl font-bold text-center text-gray-700 py-5">
@@ -142,6 +169,8 @@
             <!-- Row 1 -->
             <div
               class="relative flex justify-center items-center overflow-hidden max-w-full order-1 md:order-1"
+              data-aos="fade-right"
+              data-aos-duration="3000"
             >
               <div>
                 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aut
@@ -151,12 +180,14 @@
               </div>
             </div>
             <div
-              class="relative shadow-lg overflow-hidden order-2 md:order-2 rounded-2xl"
+              class="relative shadow-lg overflow-hidden order-2 md:order-2 rounded-xl"
+              data-aos="fade-left"
+              data-aos-duration="3000"
             >
               <img
-                src="https://images.pexels.com/photos/916361/pexels-photo-916361.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                src="./assets/chinh.jfif"
                 alt="Wedding photo"
-                class="w-full rounded-2xl"
+                class="w-full rounded-xl"
               />
               <div
                 class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-75 text-white p-6 text-center text-2xl font-semibold"
@@ -167,6 +198,8 @@
             <!-- Row 2 -->
             <div
               class="relative flex justify-center items-center overflow-hidden max-w-full order-3 md:order-4"
+              data-aos="fade-left"
+              data-aos-duration="3000"
             >
               <div>
                 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aut
@@ -176,12 +209,14 @@
               </div>
             </div>
             <div
-              class="relative shadow-lg overflow-hidden max-w-full order-4 md:order-3 rounded-2xl"
+              class="relative shadow-lg overflow-hidden max-w-full order-4 md:order-3 rounded-xl"
+              data-aos="fade-right"
+              data-aos-duration="3000"
             >
               <img
-                src="https://images.pexels.com/photos/1161372/pexels-photo-1161372.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                src="./assets/chinh2.png"
                 alt="Couple photo"
-                class="w-full rounded-2xl"
+                class="w-full rounded-xl"
               />
               <div
                 class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-75 text-white p-6 text-center text-2xl font-semibold"
@@ -193,8 +228,9 @@
         </div>
       </section>
 
+      <!-- DIA DIEM -->
       <section
-        class="w-full flex flex-col items-center bg-neutral-100 pb-5 relative"
+        class="w-full flex flex-col items-center bg-neutral-100 relative"
       >
         <div class="custom-shape-divider-top-1717948740">
           <svg
@@ -309,6 +345,239 @@
                 </a>
               </div>
             </div>
+          </div>
+        </div>
+        <!-- Curve -->
+        <div class="custom-shape-divider-bottom-21">
+          <svg
+            data-name="Layer 1"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 1200 120"
+            preserveAspectRatio="none"
+          >
+            <path
+              d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
+              class="shape-fill"
+            ></path>
+          </svg>
+        </div>
+      </section>
+      <section class="gallery-section relative pb-28">
+        <div class="h-12"></div>
+        <h2 class="text-3xl font-bold text-center text-gray-700 py-5">
+          Photo Gallery
+        </h2>
+        <div class="gallery-container">
+          <div class="slide">
+            <div
+              class="item"
+              style="background-image: url(./assets/chinh.jfif)"
+            >
+              <!-- <div class="content">
+                <div class="name">Switzerland</div>
+                <div class="des">
+                  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab,
+                  eum!
+                </div>
+              </div> -->
+            </div>
+            <div
+              class="item"
+              style="background-image: url(./assets/chinh2.png)"
+            >
+              <!-- <div class="content">
+                <div class="name">Finland</div>
+                <div class="des">
+                  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab,
+                  eum!
+                </div>
+              </div> -->
+            </div>
+            <div
+              class="item"
+              style="background-image: url(https://i.ibb.co/NSwVv8D/img3.jpg)"
+            >
+              <!-- <div class="content">
+                <div class="name">Iceland</div>
+                <div class="des">
+                  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab,
+                  eum!
+                </div>
+              </div> -->
+            </div>
+            <div
+              class="item"
+              style="background-image: url(https://i.ibb.co/Bq4Q0M8/img4.jpg)"
+            >
+              <!-- <div class="content">
+                <div class="name">Australia</div>
+                <div class="des">
+                  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab,
+                  eum!
+                </div>
+              </div> -->
+            </div>
+            <div
+              class="item"
+              style="background-image: url(https://i.ibb.co/jTQfmTq/img5.jpg)"
+            >
+              <!-- <div class="content">
+                <div class="name">Netherland</div>
+                <div class="des">
+                  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab,
+                  eum!
+                </div>
+              </div> -->
+            </div>
+            <div
+              class="item"
+              style="background-image: url(https://i.ibb.co/RNkk6L0/img6.jpg)"
+            >
+              <!-- <div class="content">
+                <div class="name">Ireland</div>
+                <div class="des">
+                  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab,
+                  eum!
+                </div>
+              </div> -->
+            </div>
+          </div>
+        </div>
+        <div class="w-full flex justify-center gap-3 z-10">
+          <button class="prev"><i class="fa-solid fa-arrow-left"></i></button>
+          <button class="next"><i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+      </section>
+
+      <!-- Loi chuc -->
+      <section
+        class="w-full flex flex-col items-center relative px-5 bg-neutral-100"
+      >
+        <div class="custom-shape-divider-top-1719140290">
+          <svg
+            data-name="Layer 1"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 1200 120"
+            preserveAspectRatio="none"
+          >
+            <path
+              d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z"
+              opacity=".25"
+              class="shape-fill"
+            ></path>
+            <path
+              d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z"
+              opacity=".5"
+              class="shape-fill"
+            ></path>
+            <path
+              d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z"
+              class="shape-fill"
+            ></path>
+          </svg>
+        </div>
+        <div class="h-24"></div>
+        <div class="container flex flex-col items-center">
+          <h2 class="text-3xl font-bold text-center text-gray-700 py-5">
+            Comment box
+          </h2>
+          <div
+            class="relative w-full max-w-3xl flex flex-col text-gray-700 bg-white shadow-xl rounded-xl bg-clip-border"
+          >
+            <nav
+              id="comment-box"
+              class="flex min-w-[240px] max-h-[350px] min-h-[240px] overflow-y-auto flex-col gap-1 p-2"
+            >
+              <!-- <div
+                role="button"
+                class="flex items-start w-full p-3 leading-tight transition-all rounded-lg outline-none text-start hover:bg-neutral-200 hover:bg-opacity-80 focus:bg-opacity-80 active:bg-opacity-80"
+              >
+                <div class="mr-4">
+                  <img
+                    alt="candice"
+                    src="https://docs.material-tailwind.com/img/face-1.jpg"
+                    class="h-12 w-12 !rounded-full object-cover object-center"
+                  />
+                </div>
+                <div class="flex-1">
+                  <div class="flex items-center">
+                    <p
+                      class="inline-flex items-center mr-3 text-sm text-gray-900 dark:text-white font-semibold"
+                    >
+                      Michael Gough
+                    </p>
+                    <p class="text-sm text-gray-600 dark:text-gray-400">
+                      <time
+                        pubdate
+                        datetime="2022-02-08"
+                        title="February 8th, 2022"
+                        >Feb. 8, 2022</time
+                      >
+                    </p>
+                  </div>
+                  <p
+                    class="block font-sans text-sm antialiased font-normal leading-normal text-gray-700 pt-1"
+                  >
+                    Software Engineer @ Material Tailwind oftware Engineer @
+                    Material Tailwind oftware Engineer @ Material Tailwind
+                    oftware Engineer @ Material Tailwind oftware Engineer @
+                    Material Tailwind Software Engineer @ Material Tailwind
+                  </p>
+                </div>
+              </div> -->
+              <!-- Comments generated here -->
+            </nav>
+          </div>
+          <div
+            class="relative flex flex-col text-gray-700 bg-transparent shadow-none rounded-xl bg-clip-border"
+          >
+            <form
+              class="max-w-screen-lg flex flex-col gap-6 mt-8 mb-2 w-80 sm:w-96"
+            >
+              <div class="flex flex-col gap-6 mb-1">
+                <h6
+                  class="block -mb-3 font-sans text-base antialiased font-semibold leading-relaxed tracking-normal text-blue-gray-900"
+                >
+                  Tên của bạn
+                </h6>
+                <div class="relative h-11 w-full min-w-[200px]">
+                  <input
+                    id="name"
+                    placeholder="Nguyễn Quang Chính"
+                    class="bg-white peer h-full w-full rounded-md border border-blue-gray-200 !border-t-blue-gray-200 bg-transparent px-3 py-3 font-sans text-sm font-normal text-blue-gray-700 outline outline-0 transition-all placeholder-shown:border placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 focus:border-2 focus:border-gray-900 focus focus:!border-t-gray-900 focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50"
+                  />
+                  <label
+                    class="before:content[' '] after:content[' '] pointer-events-none absolute left-0 -top-1.5 flex h-full w-full select-none !overflow-visible truncate text-[11px] font-normal leading-tight text-gray-500 transition-all before:pointer-events-none before:mt-[6.5px] before:mr-1 before:box-border before:block before:h-1.5 before:w-2.5 before:rounded-tl-md before:border-t before:border-l before:border-blue-gray-200 before:transition-all before:content-none after:pointer-events-none after:mt-[6.5px] after:ml-1 after:box-border after:block after:h-1.5 after:w-2.5 after:flex-grow after:rounded-tr-md after:border-t after:border-r after:border-blue-gray-200 after:transition-all after:content-none peer-placeholder-shown:text-sm peer-placeholder-shown:leading-[4.1] peer-placeholder-shown:text-blue-gray-500 peer-placeholder-shown:before:border-transparent peer-placeholder-shown:after:border-transparent peer-focus:text-[11px] peer-focus:leading-tight peer-focus:text-gray-900 peer-focus:before:border-t-2 peer-focus:before:border-l-2 peer-focus:before:!border-gray-900 peer-focus:after:border-t-2 peer-focus:after:border-r-2 peer-focus:after:!border-gray-900 peer-disabled:text-transparent peer-disabled:before:border-transparent peer-disabled:after:border-transparent peer-disabled:peer-placeholder-shown:text-blue-gray-500"
+                  ></label>
+                </div>
+                <h6
+                  class="block -mb-3 font-sans text-base antialiased font-semibold leading-relaxed tracking-normal text-blue-gray-900"
+                >
+                  Lời chúc của bạn
+                </h6>
+
+                <div class="relative h-11 w-full min-w-[200px]">
+                  <textarea
+                    id="comment"
+                    class="bg-white peer min-h-[100px] resize-none w-full rounded-md border border-blue-gray-200 !border-t-blue-gray-200 bg-transparent px-3 py-3 font-sans text-sm font-normal text-blue-gray-700 outline outline-0 transition-all placeholder-shown:border placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 focus:border-2 focus:border-gray-900 focus focus:!border-t-gray-900 focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50"
+                    placeholder="Chúc đôi bạn trăm năm hạnh phúc, vạn sự viên mãn!"
+                  ></textarea>
+                  <label
+                    class="before:content[' '] after:content[' '] pointer-events-none absolute left-0 -top-1.5 flex h-full w-full select-none !overflow-visible truncate text-[11px] font-normal leading-tight text-gray-500 transition-all before:pointer-events-none before:mt-[6.5px] before:mr-1 before:box-border before:block before:h-1.5 before:w-2.5 before:rounded-tl-md before:border-t before:border-l before:border-blue-gray-200 before:transition-all before:content-none after:pointer-events-none after:mt-[6.5px] after:ml-1 after:box-border after:block after:h-1.5 after:w-2.5 after:flex-grow after:rounded-tr-md after:border-t after:border-r after:border-blue-gray-200 after:transition-all after:content-none peer-placeholder-shown:text-sm peer-placeholder-shown:leading-[4.1] peer-placeholder-shown:text-blue-gray-500 peer-placeholder-shown:before:border-transparent peer-placeholder-shown:after:border-transparent peer-focus:text-[11px] peer-focus:leading-tight peer-focus:text-gray-900 peer-focus:before:border-t-2 peer-focus:before:border-l-2 peer-focus:before:!border-gray-900 peer-focus:after:border-t-2 peer-focus:after:border-r-2 peer-focus:after:!border-gray-900 peer-disabled:text-transparent peer-disabled:before:border-transparent peer-disabled:after:border-transparent peer-disabled:peer-placeholder-shown:text-blue-gray-500"
+                  ></label>
+                </div>
+              </div>
+
+              <div class="pt-12">
+                <button
+                  class="block w-full select-none rounded-lg bg-gray-900 py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md shadow-gray-900/10 transition-all hover:shadow-lg hover:shadow-gray-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+                  type="button"
+                  onclick="submitComment()"
+                >
+                  Gửi Lời Chúc
+                </button>
+              </div>
+            </form>
           </div>
         </div>
       </section>
