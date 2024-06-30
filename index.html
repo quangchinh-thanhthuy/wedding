@@ -24,6 +24,7 @@
     <script src="./src/scripts/photo.js" defer></script>
     <script src="./src/scripts/comment.js" defer></script>
     <script src="./src/scripts/music.js" defer></script>
+    <script src="./src/scripts/modals.js" defer></script>
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
@@ -31,7 +32,7 @@
   <body>
     <!-- Music control icon -->
     <div id="music-control" onclick="toggleMusic()">
-      <i class="fa-solid fa-volume-up" id="music-icon"></i>
+      <i class="fa-solid fa-volume-xmark" id="music-icon"></i>
     </div>
 
     <!-- Hidden audio element -->
@@ -41,77 +42,77 @@
     </audio>
 
     <div class="flex flex-col items-center">
-      <div class="w-full flex flex-col items-center bg-neutral-100">
-        <picture id="top-image"
+      <div class="w-full flex flex-col items-center">
+        <picture id="top-image" class="absolute z-10 left-0 right-0"
           ><source
             media="(min-resolution: 192dpi) and (min-width: 1280px),(-webkit-min-device-pixel-ratio: 2) and (min-width: 1280px)"
             srcset="
-              https://media-api.xogrp.com/images/83cb1d35-8e28-4acb-8772-30881796c3d5~rt_auto-rs_3000.h?ordering=explicit
+              https://media-api.xogrp.com/images/13481c4a-0d4b-4419-ab89-f9ac56136403~rt_auto-rs_3000.h?ordering=explicit
             " />
           <source
             media="(min-resolution: 192dpi) and (min-width: 1024px),(-webkit-min-device-pixel-ratio: 2) and (min-width: 1024px)"
             srcset="
-              https://media-api.xogrp.com/images/83cb1d35-8e28-4acb-8772-30881796c3d5~rt_auto-rs_2560.h?ordering=explicit
+              https://media-api.xogrp.com/images/13481c4a-0d4b-4419-ab89-f9ac56136403~rt_auto-rs_2560.h?ordering=explicit
             " />
           <source
-            media="(min-resolution: 192dpi) and (min-width: 768px),(-webkit-min-device-pixel-ratio: 2) and (min-width: 768px)"
+            media="(min-resolution: 192dpi) and (min-width: 1280px),(-webkit-min-device-pixel-ratio: 2) and (min-width: 1280px)"
             srcset="
-              https://media-api.xogrp.com/images/83cb1d35-8e28-4acb-8772-30881796c3d5~rt_auto-rs_2048.h?ordering=explicit
+              https://media-api.xogrp.com/images/13481c4a-0d4b-4419-ab89-f9ac56136403~rt_auto-rs_2560.h?ordering=explicit
             " />
           <source
             media="(min-resolution: 192dpi), (-webkit-min-device-pixel-ratio: 2)"
             srcset="
-              https://media-api.xogrp.com/images/2236e8d1-e8dd-4a16-b819-454a173313fe~rt_auto-rs_1536.h?ordering=explicit
+              https://media-api.xogrp.com/images/6e95661b-440b-469e-af90-5f1679ee5c7e~rt_auto-rs_2560.h?ordering=explicit
             " />
           <source
             media="(min-resolution: 144dpi) and (min-width: 1280px),(-webkit-min-device-pixel-ratio: 1.5) and (min-width: 1280px)"
             srcset="
-              https://media-api.xogrp.com/images/83cb1d35-8e28-4acb-8772-30881796c3d5~rt_auto-rs_2250.h?ordering=explicit
+              https://media-api.xogrp.com/images/13481c4a-0d4b-4419-ab89-f9ac56136403~rt_auto-rs_2560.h?ordering=explicit
             " />
           <source
             media="(min-resolution: 144dpi) and (min-width: 1024px),(-webkit-min-device-pixel-ratio: 1.5) and (min-width: 1024px)"
             srcset="
-              https://media-api.xogrp.com/images/83cb1d35-8e28-4acb-8772-30881796c3d5~rt_auto-rs_1920.h?ordering=explicit
+              https://media-api.xogrp.com/images/13481c4a-0d4b-4419-ab89-f9ac56136403~rt_auto-rs_2560.h?ordering=explicit
             " />
           <source
             media="(min-resolution: 144dpi) and (min-width: 768px),(-webkit-min-device-pixel-ratio: 1.5) and (min-width: 768px)"
             srcset="
-              https://media-api.xogrp.com/images/83cb1d35-8e28-4acb-8772-30881796c3d5~rt_auto-rs_1536.h?ordering=explicit
+              https://media-api.xogrp.com/images/13481c4a-0d4b-4419-ab89-f9ac56136403~rt_auto-rs_2560.h?ordering=explicit
             " />
           <source
             media="(min-resolution: 144dpi), (-webkit-min-device-pixel-ratio: 1.5)"
             srcset="
-              https://media-api.xogrp.com/images/2236e8d1-e8dd-4a16-b819-454a173313fe~rt_auto-rs_1152.h?ordering=explicit
+              https://media-api.xogrp.com/images/6e95661b-440b-469e-af90-5f1679ee5c7e~rt_auto-rs_2560.h?ordering=explicit
             " />
           <source
             media="(min-width: 1280px)"
             srcset="
-              https://media-api.xogrp.com/images/83cb1d35-8e28-4acb-8772-30881796c3d5~rt_auto-rs_1500.h?ordering=explicit
+              https://media-api.xogrp.com/images/13481c4a-0d4b-4419-ab89-f9ac56136403~rt_auto-rs_2560.h?ordering=explicit
             " />
           <source
             media="(min-width: 1024px)"
             srcset="
-              https://media-api.xogrp.com/images/83cb1d35-8e28-4acb-8772-30881796c3d5~rt_auto-rs_1280.h?ordering=explicit
+              https://media-api.xogrp.com/images/13481c4a-0d4b-4419-ab89-f9ac56136403~rt_auto-rs_2560.h?ordering=explicit
             " />
           <source
             media="(min-width: 768px)"
             srcset="
-              https://media-api.xogrp.com/images/83cb1d35-8e28-4acb-8772-30881796c3d5~rt_auto-rs_1024.h?ordering=explicit
+              https://media-api.xogrp.com/images/13481c4a-0d4b-4419-ab89-f9ac56136403~rt_auto-rs_2560.h?ordering=explicit
             " />
           <source
             srcset="
-              https://media-api.xogrp.com/images/2236e8d1-e8dd-4a16-b819-454a173313fe~rt_auto-rs_768.h?ordering=explicit
+              https://media-api.xogrp.com/images/6e95661b-440b-469e-af90-5f1679ee5c7e~rt_auto-rs_2560.h?ordering=explicit
             " />
           <img
             loading="eager"
             alt=""
-            src="https://media-api.xogrp.com/images/83cb1d35-8e28-4acb-8772-30881796c3d5~rt_auto-rs_1024.h?ordering=explicit"
+            src="https://media-api.xogrp.com/images/13481c4a-0d4b-4419-ab89-f9ac56136403~rt_auto-rs_2560.h?ordering=explicit"
             class="css-1ago99h"
         /></picture>
       </div>
 
       <section
-        class="w-full flex flex-col items-center bg-neutral-100 pb-5 relative"
+        class="w-full flex flex-col items-center pt-60 pb-5 relative sm:pt-36"
       >
         <div
           class="m-5 text-4xl tracking-widest uppercase pb-5 sm:text-5xl sm:pt-5"
@@ -119,26 +120,26 @@
           Chính & Thủy
         </div>
         <div class="text-2xl tracking-wider pb-2">28.07.2024</div>
-        <div class="py-8">
+        <div class="p-8 sm:w-3/4">
           <img
-            src="https://www.theknot.com/tk-media/images/ec540d62-dd40-4000-b757-0abe4e7d95f2~rt_auto-cr_0.472.6016.3479-rs_1280.h?ordering=explicit"
+            src="./assets/ngang1-crop.jpg"
             alt="Wedding Invitation Background"
             class="w-full"
           />
         </div>
-        <div class="text-2xl tracking-widest">WEDDING DAY</div>
         <div
-          class="grid grid-cols-3 gap-4 items-center text-center py-6"
+          class="grid grid-cols-3 gap-4 items-center text-center pb-6"
           data-aos="fade-in"
           data-aos-duration="3000"
         >
           <span class="border-y-2 border-gray-200 p-2">CHỦ NHẬT</span>
-          <span class="text-5xl font-bold">19</span>
-          <span class="border-y-2 border-gray-200 p-2">05 - 2024</span>
+          <span class="text-5xl font-bold">28</span>
+          <span class="border-y-2 border-gray-200 p-2">07 - 2024</span>
         </div>
-        <div class="pb-4">Palm Canyon Resort</div>
+        <div class="pb-4">TRUM TÂM HỘI NGHỊ TIỆC CƯỚI</div>
+        <div class="pb-4">FOREVERMARK</div>
         <div class="pb-5 text-center">
-          221 Palm Canyon Dr, Borrego Springs, CA, 53110
+          614 Đường Lạc Long Quân - Nhật Tân - Tây Hồ - Hà Nội
         </div>
 
         <div class="h-24"></div>
@@ -158,7 +159,7 @@
       </section>
 
       <!-- CO DAU CHU RE -->
-      <section class="w-full flex flex-col items-center pt-10">
+      <section class="w-full flex flex-col items-center pt-10 bg-neutral-100">
         <div class="flex flex-col items-center max-w-3xl p-10">
           <h2 class="text-3xl font-bold text-center text-gray-700 py-5">
             CÔ DÂU & CHÚ RỂ
@@ -172,11 +173,9 @@
               data-aos="fade-right"
               data-aos-duration="3000"
             >
-              <div>
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aut
-                minus incidunt fuga consequuntur esse vel illum eum, totam
-                obcaecati fugit tenetur asperiores qui pariatur reprehenderit,
-                accusamus id quisquam itaque quo.
+              <div class="quote">
+                "Tình yêu không phải là nhìn nhau, mà là cùng nhau nhìn về một
+                hướng."
               </div>
             </div>
             <div
@@ -185,14 +184,14 @@
               data-aos-duration="3000"
             >
               <img
-                src="./assets/chinh.jfif"
+                src="./assets/codau-resized.jpg"
                 alt="Wedding photo"
                 class="w-full rounded-xl"
               />
               <div
                 class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-75 text-white p-6 text-center text-2xl font-semibold"
               >
-                Thu Thủy
+                Phạm Thanh Thủy
               </div>
             </div>
             <!-- Row 2 -->
@@ -201,11 +200,9 @@
               data-aos="fade-left"
               data-aos-duration="3000"
             >
-              <div>
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aut
-                minus incidunt fuga consequuntur esse vel illum eum, totam
-                obcaecati fugit tenetur asperiores qui pariatur reprehenderit,
-                accusamus id quisquam itaque quo.
+              <div class="quote">
+                "Yêu không chỉ là một cảm giác, nó là một quyết định, một lời
+                hứa, và một cam kết mỗi ngày."
               </div>
             </div>
             <div
@@ -214,14 +211,14 @@
               data-aos-duration="3000"
             >
               <img
-                src="./assets/chinh2.png"
+                src="./assets/chure-resized.jpg"
                 alt="Couple photo"
                 class="w-full rounded-xl"
               />
               <div
                 class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-75 text-white p-6 text-center text-2xl font-semibold"
               >
-                Quang Chính
+                Nguyễn Quang Chính
               </div>
             </div>
           </div>
@@ -229,9 +226,7 @@
       </section>
 
       <!-- DIA DIEM -->
-      <section
-        class="w-full flex flex-col items-center bg-neutral-100 relative"
-      >
+      <section class="w-full flex flex-col items-center relative">
         <div class="custom-shape-divider-top-1717948740">
           <svg
             data-name="Layer 1"
@@ -250,39 +245,40 @@
             Trân trọng kính mời
           </h2>
           <div
-            class="flex flex-col md:flex-row justify-center items-center gap-14 p-10"
+            class="flex flex-col md:flex-row justify-center items-center gap-14 p-10 z-20"
           >
             <div
               class="flex flex-col items-center p-4 border-stone-200 border-2 shadow-xl rounded-xl max-w-96 divide-y divide-gray-200"
             >
               <div class="flex flex-col items-center h-[640px]">
                 <img
-                  src="https://images.pexels.com/photos/3217509/pexels-photo-3217509.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                  src="./assets/ngang1-right-resized.jpg"
                   alt="Event Photo"
                   class="max-w-full w-80 aspect-square object-cover p-2 bg-white rounded-t-full rounded-b-none"
                 />
                 <div class="text-2xl font-bold tracking-widest py-5">
                   TIỆC NHÀ GÁI
                 </div>
-                <div class="font-semibold">Vào lúc 11:00</div>
+                <div class="font-semibold">Vào lúc 17:30</div>
                 <div
                   class="grid grid-cols-3 gap-4 items-center text-center pt-3 pb-6"
                   data-aos="fade-in"
                   data-aos-duration="3000"
                 >
-                  <span class="border-y-2 border-gray-200 p-2">CHỦ NHẬT</span>
-                  <span class="text-5xl font-bold">19</span>
-                  <span class="border-y-2 border-gray-200 p-2">05 - 2024</span>
+                  <span class="border-y-2 border-gray-200 p-2">Thứ Bảy</span>
+                  <span class="text-5xl font-bold">13</span>
+                  <span class="border-y-2 border-gray-200 p-2">07 - 2024</span>
                 </div>
-                <div class="pb-4">Palm Canyon Resort</div>
+                <div class="pb-4">TẠI GIA</div>
                 <div class="pb-5 text-center">
-                  221 Palm Canyon Dr, Borrego Springs, CA, 53110
+                  Ngõ 420/2 Đường Hà Huy Tập - Thị trấn Yên Viên - Gia Lâm - Hà
+                  Nội
                 </div>
               </div>
               <div class="w-full pt-4 flex flex-col items-center">
                 <a
                   class="flex justify-center items-center cursor-pointer border-solid border border-black rounded-full p-2 bg-neutral-200"
-                  href="https://maps.app.goo.gl/r958JHibC9Fukg8N7"
+                  href="https://www.google.com/maps?gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIPCAEQLhgNGK8BGMcBGIAEMgoIAhAAGIAEGKIE0gEHNjI4ajBqN6gCALACAA&um=1&ie=UTF-8&fb=1&gl=vn&sa=X&geocode=Kee3Y-ntqjUxMWH3N_DcqEU5&daddr=614+%C4%90.+L%E1%BA%A1c+Long+Qu%C3%A2n,+Nh%E1%BA%ADt+T%C3%A2n,+T%C3%A2y+H%E1%BB%93,+H%C3%A0+N%E1%BB%99i+124012"
                   target="_blank"
                 >
                   <svg
@@ -303,33 +299,33 @@
             >
               <div class="flex flex-col items-center h-[640px]">
                 <img
-                  src="https://images.pexels.com/photos/1587042/pexels-photo-1587042.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                  src="./assets/chinh2.png"
                   alt="Event Photo"
-                  class="max-w-full w-80 aspect-square object-cover p-2 bg-white rounded-t-full rounded-b-none"
+                  class="max-w-full w-80 aspect-square object-cover p-2 bg-white rounded-t-full rounded-b-none object-top"
                 />
                 <div class="text-2xl font-bold tracking-widest py-5">
                   TIỆC NHÀ TRAI
                 </div>
-                <div class="font-semibold">Vào lúc 11:00</div>
+                <div class="font-semibold">Vào lúc 10:30</div>
                 <div
                   class="grid grid-cols-3 gap-4 items-center text-center pt-3 pb-6"
                   data-aos="fade-in"
                   data-aos-duration="3000"
                 >
                   <span class="border-y-2 border-gray-200 p-2">CHỦ NHẬT</span>
-                  <span class="text-5xl font-bold">19</span>
-                  <span class="border-y-2 border-gray-200 p-2">05 - 2024</span>
+                  <span class="text-5xl font-bold">28</span>
+                  <span class="border-y-2 border-gray-200 p-2">07 - 2024</span>
                 </div>
-                <div class="pb-4">Palm Canyon Resort</div>
+                <div class="pb-4">TRUM TÂM HỘI NGHỊ TIỆC CƯỚI</div>
+                <div class="pb-4">FOREVERMARK</div>
                 <div class="pb-5 text-center">
-                  221 Palm Canyon Dr, Borrego Springs, CA, 53110 221 Palm Canyon
-                  Dr, Borrego Springs, CA, 53110
+                  614 Đường Lạc Long Quân - Nhật Tân - Tây Hồ - Hà Nội
                 </div>
               </div>
               <div class="w-full pt-4 flex flex-col items-center">
                 <a
                   class="flex justify-center items-center cursor-pointer border-solid border border-black rounded-full p-2 bg-neutral-200"
-                  href="https://maps.app.goo.gl/r958JHibC9Fukg8N7"
+                  href="https://www.google.com/maps?gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIPCAEQLhgNGK8BGMcBGIAEMgoIAhAAGIAEGKIE0gEHNjI4ajBqN6gCALACAA&um=1&ie=UTF-8&fb=1&gl=vn&sa=X&geocode=Kee3Y-ntqjUxMWH3N_DcqEU5&daddr=614+%C4%90.+L%E1%BA%A1c+Long+Qu%C3%A2n,+Nh%E1%BA%ADt+T%C3%A2n,+T%C3%A2y+H%E1%BB%93,+H%C3%A0+N%E1%BB%99i+124012"
                   target="_blank"
                 >
                   <svg
@@ -348,7 +344,7 @@
           </div>
         </div>
         <!-- Curve -->
-        <div class="custom-shape-divider-bottom-21">
+        <!-- <div class="custom-shape-divider-bottom-21">
           <svg
             data-name="Layer 1"
             xmlns="http://www.w3.org/2000/svg"
@@ -360,92 +356,95 @@
               class="shape-fill"
             ></path>
           </svg>
-        </div>
+        </div> -->
       </section>
+
+      <!-- ANH -->
       <section class="gallery-section relative pb-28">
         <div class="h-12"></div>
         <h2 class="text-3xl font-bold text-center text-gray-700 py-5">
           Photo Gallery
         </h2>
-        <div class="gallery-container">
+        <div class="gallery-container relative">
           <div class="slide">
             <div
               class="item"
-              style="background-image: url(./assets/chinh.jfif)"
-            >
-              <!-- <div class="content">
-                <div class="name">Switzerland</div>
-                <div class="des">
-                  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab,
-                  eum!
-                </div>
-              </div> -->
-            </div>
+              style="background-image: url(./assets/anhphong1-resized.jpg)"
+            ></div>
             <div
               class="item"
-              style="background-image: url(./assets/chinh2.png)"
-            >
-              <!-- <div class="content">
-                <div class="name">Finland</div>
-                <div class="des">
-                  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab,
-                  eum!
-                </div>
-              </div> -->
-            </div>
+              style="background-image: url(./assets/anhphong2-resized.jpg)"
+            ></div>
             <div
               class="item"
-              style="background-image: url(https://i.ibb.co/NSwVv8D/img3.jpg)"
-            >
-              <!-- <div class="content">
-                <div class="name">Iceland</div>
-                <div class="des">
-                  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab,
-                  eum!
-                </div>
-              </div> -->
-            </div>
+              style="background-image: url(./assets/anhphong3-resized.jpg)"
+            ></div>
             <div
               class="item"
-              style="background-image: url(https://i.ibb.co/Bq4Q0M8/img4.jpg)"
-            >
-              <!-- <div class="content">
-                <div class="name">Australia</div>
-                <div class="des">
-                  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab,
-                  eum!
-                </div>
-              </div> -->
-            </div>
+              style="
+                background-image: url(./assets/ngang2-left-resized.jpg);
+                background-position-y: 30%;
+              "
+            ></div>
             <div
               class="item"
-              style="background-image: url(https://i.ibb.co/jTQfmTq/img5.jpg)"
-            >
-              <!-- <div class="content">
-                <div class="name">Netherland</div>
-                <div class="des">
-                  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab,
-                  eum!
-                </div>
-              </div> -->
-            </div>
-            <div
-              class="item"
-              style="background-image: url(https://i.ibb.co/RNkk6L0/img6.jpg)"
-            >
-              <!-- <div class="content">
-                <div class="name">Ireland</div>
-                <div class="des">
-                  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab,
-                  eum!
-                </div>
-              </div> -->
-            </div>
+              style="
+                background-image: url(./assets/ngang1-right-resized.jpg);
+                background-position-y: center;
+              "
+            ></div>
           </div>
-        </div>
-        <div class="w-full flex justify-center gap-3 z-10">
-          <button class="prev"><i class="fa-solid fa-arrow-left"></i></button>
-          <button class="next"><i class="fa-solid fa-arrow-right"></i></button>
+          <button
+            type="button"
+            class="prev absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+          >
+            <span
+              class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none"
+            >
+              <svg
+                class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 6 10"
+              >
+                <path
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M5 1 1 5l4 4"
+                />
+              </svg>
+              <span class="sr-only">Previous</span>
+            </span>
+          </button>
+          <button
+            type="button"
+            class="next absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+            data-carousel-next
+          >
+            <span
+              class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none"
+            >
+              <svg
+                class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 6 10"
+              >
+                <path
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="m1 9 4-4-4-4"
+                />
+              </svg>
+              <span class="sr-only">Next</span>
+            </span>
+          </button>
         </div>
       </section>
 
@@ -478,53 +477,84 @@
         </div>
         <div class="h-24"></div>
         <div class="container flex flex-col items-center">
+          <div class="flex flex-row justify-center items-center gap-14 p-10">
+            <div class="flex items-center p-4">
+              <div
+                class="flex flex-col items-center relative cursor-pointer"
+                onclick="openModal('modal')"
+              >
+                <img
+                  src="./assets/codau-resized.jpg"
+                  alt="Event Photo"
+                  class="w-72 aspect-square object-cover p-2 bg-white rounded-full object-left"
+                />
+                <img
+                  src="./assets/qr.png"
+                  alt="Event Photo"
+                  class="w-14 sm:w-24 aspect-square object-cover bg-white absolute -bottom-7 -left-4 z-10"
+                />
+              </div>
+            </div>
+            <div class="flex items-center p-4">
+              <div class="flex flex-col items-center relative">
+                <img
+                  src="./assets/chure-resized.jpg"
+                  alt="Event Photo"
+                  class="w-72 aspect-square object-cover p-2 bg-white rounded-full object-top"
+                />
+                <img
+                  src="./assets/qr.png"
+                  alt="Event Photo"
+                  class="w-14 sm:w-24 aspect-square object-cover bg-white absolute -bottom-7 -left-4 z-10"
+                />
+              </div>
+            </div>
+          </div>
+
+          <!-- TODO: MODAL -->
+          <!-- <div
+            id="modal"
+            class="fixed hidden z-50 inset-0 bg-gray-900 bg-opacity-60 overflow-y-auto h-full w-full px-4 modal"
+          >
+            <div
+              class="relative top-40 mx-auto shadow-xl rounded-md bg-white max-w-md"
+            >
+              <div
+                class="flex justify-end items-center bg-white text-xl rounded-t-md px-4 py-2"
+              >
+                <div class="closeBtn" onclick="closeModal('modal')">
+                  <i class="fa fa-times"></i>
+                </div>
+              </div>
+
+              <div class="flex flex-col items-center p-4">
+                <div class="flex items-center">
+                  <div class="flex flex-col items-center relative">
+                    <img
+                      src="./assets/chure-resized.jpg"
+                      alt="Event Photo"
+                      class="w-72 aspect-square object-cover p-2 bg-white rounded-full object-top"
+                    />
+                    <img
+                      src="./assets/qr.png"
+                      alt="Event Photo"
+                      class="w-24 aspect-square object-cover bg-white absolute bottom-0 left-0"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div> -->
           <h2 class="text-3xl font-bold text-center text-gray-700 py-5">
-            Comment box
+            Lời Chúc
           </h2>
           <div
             class="relative w-full max-w-3xl flex flex-col text-gray-700 bg-white shadow-xl rounded-xl bg-clip-border"
           >
             <nav
               id="comment-box"
-              class="flex min-w-[240px] max-h-[350px] min-h-[240px] overflow-y-auto flex-col gap-1 p-2"
+              class="flex min-w-[240px] max-h-[390px] min-h-[240px] overflow-y-auto flex-col gap-1 p-2"
             >
-              <!-- <div
-                role="button"
-                class="flex items-start w-full p-3 leading-tight transition-all rounded-lg outline-none text-start hover:bg-neutral-200 hover:bg-opacity-80 focus:bg-opacity-80 active:bg-opacity-80"
-              >
-                <div class="mr-4">
-                  <img
-                    alt="candice"
-                    src="https://docs.material-tailwind.com/img/face-1.jpg"
-                    class="h-12 w-12 !rounded-full object-cover object-center"
-                  />
-                </div>
-                <div class="flex-1">
-                  <div class="flex items-center">
-                    <p
-                      class="inline-flex items-center mr-3 text-sm text-gray-900 dark:text-white font-semibold"
-                    >
-                      Michael Gough
-                    </p>
-                    <p class="text-sm text-gray-600 dark:text-gray-400">
-                      <time
-                        pubdate
-                        datetime="2022-02-08"
-                        title="February 8th, 2022"
-                        >Feb. 8, 2022</time
-                      >
-                    </p>
-                  </div>
-                  <p
-                    class="block font-sans text-sm antialiased font-normal leading-normal text-gray-700 pt-1"
-                  >
-                    Software Engineer @ Material Tailwind oftware Engineer @
-                    Material Tailwind oftware Engineer @ Material Tailwind
-                    oftware Engineer @ Material Tailwind oftware Engineer @
-                    Material Tailwind Software Engineer @ Material Tailwind
-                  </p>
-                </div>
-              </div> -->
               <!-- Comments generated here -->
             </nav>
           </div>
@@ -532,7 +562,7 @@
             class="relative flex flex-col text-gray-700 bg-transparent shadow-none rounded-xl bg-clip-border"
           >
             <form
-              class="max-w-screen-lg flex flex-col gap-6 mt-8 mb-2 w-80 sm:w-96"
+              class="max-w-screen-lg flex flex-col gap-6 mt-8 mb-2 w-80 sm:w-96 z-20"
             >
               <div class="flex flex-col gap-6 mb-1">
                 <h6
@@ -582,74 +612,89 @@
         </div>
       </section>
 
-      <div class="w-full flex flex-col items-center bg-neutral-100">
-        <picture class="css-dfq8d"
+      <div
+        class="w-full h-96 flex flex-col items-center bg-neutral-100 relative"
+      >
+        <picture class="absolute z-10 bottom-0"
           ><source
             media="(min-resolution: 192dpi) and (min-width: 1280px),(-webkit-min-device-pixel-ratio: 2) and (min-width: 1280px)"
             srcset="
-              https://media-api.xogrp.com/images/b1b82d83-f724-4080-8940-d3a62331f66e~rt_auto-rs_2560.h?ordering=explicit
+              https://media-api.xogrp.com/images/45a9ac2b-fe04-4796-a21d-feae7f6bb33c~rt_auto-rs_2560.h?ordering=explicit
             " />
           <source
             media="(min-resolution: 192dpi) and (min-width: 1024px),(-webkit-min-device-pixel-ratio: 2) and (min-width: 1024px)"
             srcset="
-              https://media-api.xogrp.com/images/b1b82d83-f724-4080-8940-d3a62331f66e~rt_auto-rs_2048.h?ordering=explicit
+              https://media-api.xogrp.com/images/45a9ac2b-fe04-4796-a21d-feae7f6bb33c~rt_auto-rs_2048.h?ordering=explicit
             " />
           <source
             media="(min-resolution: 192dpi) and (min-width: 768px),(-webkit-min-device-pixel-ratio: 2) and (min-width: 768px)"
             srcset="
-              https://media-api.xogrp.com/images/b1b82d83-f724-4080-8940-d3a62331f66e~rt_auto-rs_1536.h?ordering=explicit
+              https://media-api.xogrp.com/images/45a9ac2b-fe04-4796-a21d-feae7f6bb33c~rt_auto-rs_2560.h?ordering=explicit
             " />
           <source
             media="(min-resolution: 192dpi), (-webkit-min-device-pixel-ratio: 2)"
             srcset="
-              https://media-api.xogrp.com/images/ce8b2792-cd27-4b51-82d7-03d619f2fbad~rt_auto-rs_960.h?ordering=explicit
+              https://media-api.xogrp.com/images/a13ebc45-1a49-4917-ad94-f923fd8e80ee~rt_auto-rs_2560.h?ordering=explicit
             " />
           <source
             media="(min-resolution: 144dpi) and (min-width: 1280px),(-webkit-min-device-pixel-ratio: 1.5) and (min-width: 1280px)"
             srcset="
-              https://media-api.xogrp.com/images/b1b82d83-f724-4080-8940-d3a62331f66e~rt_auto-rs_1920.h?ordering=explicit
+              https://media-api.xogrp.com/images/45a9ac2b-fe04-4796-a21d-feae7f6bb33c~rt_auto-rs_2560.h?ordering=explicit
             " />
           <source
             media="(min-resolution: 144dpi) and (min-width: 1024px),(-webkit-min-device-pixel-ratio: 1.5) and (min-width: 1024px)"
             srcset="
-              https://media-api.xogrp.com/images/b1b82d83-f724-4080-8940-d3a62331f66e~rt_auto-rs_1536.h?ordering=explicit
+              https://media-api.xogrp.com/images/45a9ac2b-fe04-4796-a21d-feae7f6bb33c~rt_auto-rs_2560.h?ordering=explicit
             " />
           <source
             media="(min-resolution: 144dpi) and (min-width: 768px),(-webkit-min-device-pixel-ratio: 1.5) and (min-width: 768px)"
             srcset="
-              https://media-api.xogrp.com/images/b1b82d83-f724-4080-8940-d3a62331f66e~rt_auto-rs_1152.h?ordering=explicit
+              https://media-api.xogrp.com/images/45a9ac2b-fe04-4796-a21d-feae7f6bb33c~rt_auto-rs_2560.h?ordering=explicit
             " />
           <source
             media="(min-resolution: 144dpi), (-webkit-min-device-pixel-ratio: 1.5)"
             srcset="
-              https://media-api.xogrp.com/images/ce8b2792-cd27-4b51-82d7-03d619f2fbad~rt_auto-rs_720.h?ordering=explicit
+              https://media-api.xogrp.com/images/a13ebc45-1a49-4917-ad94-f923fd8e80ee~rt_auto-rs_2560.h?ordering=explicit
             " />
           <source
             media="(min-width: 1280px)"
             srcset="
-              https://media-api.xogrp.com/images/b1b82d83-f724-4080-8940-d3a62331f66e~rt_auto-rs_1280.h?ordering=explicit
+              https://media-api.xogrp.com/images/45a9ac2b-fe04-4796-a21d-feae7f6bb33c~rt_auto-rs_2560.h?ordering=explicit
             " />
           <source
             media="(min-width: 1024px)"
             srcset="
-              https://media-api.xogrp.com/images/b1b82d83-f724-4080-8940-d3a62331f66e~rt_auto-rs_1024.h?ordering=explicit
+              https://media-api.xogrp.com/images/45a9ac2b-fe04-4796-a21d-feae7f6bb33c~rt_auto-rs_2560.h?ordering=explicit
             " />
           <source
             media="(min-width: 768px)"
             srcset="
-              https://media-api.xogrp.com/images/b1b82d83-f724-4080-8940-d3a62331f66e~rt_auto-rs_1024.h?ordering=explicit
+              https://media-api.xogrp.com/images/45a9ac2b-fe04-4796-a21d-feae7f6bb33c~rt_auto-rs_2560.h?ordering=explicit
             " />
           <source
             srcset="
-              https://media-api.xogrp.com/images/ce8b2792-cd27-4b51-82d7-03d619f2fbad~rt_auto-rs_1024.h?ordering=explicit
+              https://media-api.xogrp.com/images/a13ebc45-1a49-4917-ad94-f923fd8e80ee~rt_auto-rs_2560.h?ordering=explicit
             " />
           <img
             loading="eager"
             alt=""
-            src="https://media-api.xogrp.com/images/b1b82d83-f724-4080-8940-d3a62331f66e~rt_auto-rs_1024.h?ordering=explicit"
+            src="https://media-api.xogrp.com/images/45a9ac2b-fe04-4796-a21d-feae7f6bb33c~rt_auto-rs_2560.h?ordering=explicit"
             class="css-1ago99h"
         /></picture>
       </div>
+    </div>
+
+    <div class="bg-neutral-100 py-1">
+      <span
+        class="block text-sm text-gray-500 sm:text-center dark:text-gray-400 text-center"
+        >Developed By
+        <a
+          target="_blank"
+          href="https://github.com/ptnam0700"
+          class="hover:underline"
+          >Nam Pham</a
+        >
+      </span>
     </div>
   </body>
 </html>

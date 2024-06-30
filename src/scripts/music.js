@@ -1,7 +1,5 @@
 const audio = document.getElementById("background-music");
-let isMusicPlaying = true;
-audio.muted = false;
-audio.play();
+let isMusicPlaying = false;
 
 function toggleMusic() {
   // Get the element

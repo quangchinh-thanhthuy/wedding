@@ -93,7 +93,6 @@ async function loadComments() {
 async function submitComment() {
   const name = document.getElementById("name").value;
   const comment = document.getElementById("comment").value;
-
   if (!name || !comment) return;
 
   const imageURL = setAvatar(name);
