@@ -1,5 +1,5 @@
 const apiUrl =
-  "https://script.google.com/macros/s/AKfycbwS8ihECbMvvP0dH8WJY30ScxlDcwyhX3EniNLpJz7Rh0_5RLIebgXGZ8RpSDeBSi4qHw/exec"; // Replace with your actual URL
+  "https://script.google.com/macros/s/AKfycbwS8ihECbMvvP0dH8WJY30ScxlDcwyhX3EniNLpJz7Rh0_5RLIebgXGZ8RpSDeBSi4qHw/exec";
 
 const pastelColors = [
   "#973131",

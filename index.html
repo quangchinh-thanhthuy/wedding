@@ -25,6 +25,7 @@
     <script src="./src/scripts/comment.js" defer></script>
     <script src="./src/scripts/music.js" defer></script>
     <script src="./src/scripts/modals.js" defer></script>
+    <script src="./src/scripts/rsvp.js" defer></script>
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
@@ -232,7 +233,7 @@
             >
               <div class="flex flex-col items-center h-[640px]">
                 <img
-                  src="./assets/chinh2.png"
+                  src="./assets/cdcr.png"
                   alt="Event Photo"
                   class="max-w-full w-80 aspect-square object-cover p-2 bg-white rounded-t-full rounded-b-none object-top"
                 />
@@ -458,7 +459,7 @@
       </section>
 
       <!-- QUA CUOI -->
-      <section class="w-full flex flex-col items-center relative px-5">
+      <section class="w-full flex flex-col items-center relative px-5 bg-neutral-50">
         <h2 class="text-3xl font-bold text-center text-gray-700 py-5">
           Quà Mừng Cưới
         </h2>
@@ -470,10 +471,10 @@
               class="flex flex-col items-center relative cursor-pointer"
             >
               <img
-                src="./assets/codau-ava.jpg"
+                src="./assets/codau-avaa.jpg"
                 alt="Event Photo"
                 class="w-72 aspect-square object-cover p-2 bg-white rounded-full"
-                style="object-position: 0 12%;"
+                style="object-position: 0 25%;"
               />
               <h5 class="mt-8 mb-1 text-xl font-medium text-gray-900 dark:text-white">PHAM THANH THUY</h5>
               <span class="text-sm text-gray-500 dark:text-gray-400">STK: 155298324</span>
@@ -503,6 +504,54 @@
             </div>
           </div>
         </div>
+      </section>
+
+      <section class="w-full flex flex-col items-center relative px-5">
+        <div
+          class="max-w-screen-lg flex flex-col gap-6 mt-8 mb-2 w-80 sm:w-96 z-20"
+        >
+          <div class="flex flex-col gap-6 mb-1">
+            <h2 class="text-3xl font-bold text-center text-gray-700 py-5">
+              Thông tin phản hồi
+            </h2>
+            <p class="text-center">Để thuận tiện cho việc sắp xếp chỗ ngồi, vui lòng phản hồi giúp vợ chồng mình nhé!</p>
+            <form id="rsvpForm" class="relative h-11 w-full min-w-[200px]">
+              <input
+                id="rsvp-name"
+                placeholder="Tên của khách mời"
+                class="bg-white peer h-full w-full rounded-md border border-blue-gray-200 !border-t-blue-gray-200 bg-transparent px-3 py-3 font-sans text-sm font-normal text-blue-gray-700 outline outline-0 transition-all placeholder-shown:border placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 focus:border-2 focus:border-gray-900 focus focus:!border-t-gray-900 focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50"
+              />
+              <label
+                class="before:content[' '] after:content[' '] pointer-events-none absolute left-0 -top-1.5 flex h-full w-full select-none !overflow-visible truncate text-[11px] font-normal leading-tight text-gray-500 transition-all before:pointer-events-none before:mt-[6.5px] before:mr-1 before:box-border before:block before:h-1.5 before:w-2.5 before:rounded-tl-md before:border-t before:border-l before:border-blue-gray-200 before:transition-all before:content-none after:pointer-events-none after:mt-[6.5px] after:ml-1 after:box-border after:block after:h-1.5 after:w-2.5 after:flex-grow after:rounded-tr-md after:border-t after:border-r after:border-blue-gray-200 after:transition-all after:content-none peer-placeholder-shown:text-sm peer-placeholder-shown:leading-[4.1] peer-placeholder-shown:text-blue-gray-500 peer-placeholder-shown:before:border-transparent peer-placeholder-shown:after:border-transparent peer-focus:text-[11px] peer-focus:leading-tight peer-focus:text-gray-900 peer-focus:before:border-t-2 peer-focus:before:border-l-2 peer-focus:before:!border-gray-900 peer-focus:after:border-t-2 peer-focus:after:border-r-2 peer-focus:after:!border-gray-900 peer-disabled:text-transparent peer-disabled:before:border-transparent peer-disabled:after:border-transparent peer-disabled:peer-placeholder-shown:text-blue-gray-500"
+              ></label>
+            </div>
+            <fieldset>
+              <legend class="sr-only">Checkbox variants</legend>
+            
+              <div class="flex items-center mb-4">
+                <input id="checkbox-3" type="checkbox" value="Le An Hoi" class="accent-neutral-500 w-4 h-4 text-neutral-600 bg-gray-100 border-gray-300 rounded focus:ring-neutral-500 dark:focus:ring-neutral-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" >
+                <label for="checkbox-3" class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Lễ Ăn Hỏi</label>
+              </div>
+
+              <div class="flex items-center mb-4">
+                  <input id="checkbox-1" type="checkbox" value="Tiec Cuoi Nha Gai" class="accent-neutral-500 w-4 h-4 text-neutral-600 bg-gray-100 border-gray-300 rounded focus:ring-neutral-500 dark:focus:ring-neutral-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" >
+                  <label for="checkbox-1" class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Tiệc Cưới Nhà Gái</label>
+              </div>
+            
+              <div class="flex items-center mb-4">
+                  <input id="checkbox-2" checked type="checkbox" value="Tiec Cuoi Nha Trai" class="accent-neutral-500 w-4 h-4 text-neutral-600 bg-gray-100 border-gray-300 rounded focus:ring-neutral-500 dark:focus:ring-neutral-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                  <label for="checkbox-2" class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Tiệc Cưới Nhà Trai</label>
+              </div>
+            </fieldset>
+            <button
+              class="block w-full select-none rounded-lg bg-gray-900 py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md shadow-gray-900/10 transition-all hover:shadow-lg hover:shadow-gray-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+              type="button"
+              onclick="submitResponse()"
+            >
+              Xác Nhận
+            </button>
+          </div>
+        </form>
       </section>
 
       <!-- Loi chuc -->
@@ -600,6 +649,8 @@
           </div>
         </div>
       </section>
+
+
 
       <div
         class="w-full h-96 flex flex-col items-center bg-neutral-100 relative"
