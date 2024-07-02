@@ -1,5 +1,5 @@
-const rsvpUrl = "https://script.google.com/macros/s/AKfycbwT6DQL3Whbyi6MeEDs9VEXeFH4HbqW8qB5ZqvxGp5K8qnk6x-AkhA6nJkYxr0NzX0DtQ/exec";
-  
+const rsvpUrl = "https://script.google.com/macros/s/AKfycbxn0aSgn3zAR9FVuM200IF2LWYR1Oa_fPzHNrkHWwE86gpEZ_VrvwhFZ16jlAUv0j6W2A/exec";
+
 async function submitResponse() {
     const name = document.getElementById('rsvp-name').value;
     const leAnHoi = document.getElementById('checkbox-3').checked;
