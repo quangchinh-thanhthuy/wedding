@@ -13,6 +13,12 @@ async function submitResponse() {
       tiecCuoiNhaTrai
     }
     try {
+      Swal.fire({
+        icon: "success",
+        title: "Xác Nhận Tham Dự Thành Công",
+        text: "Cảm ơn bạn đã xác nhận tham dự đám cưới của chúng tôi.",
+      });
+      
       await fetch(rsvpUrl, {
         redirect: "follow",
         method: "POST",
@@ -20,11 +26,6 @@ async function submitResponse() {
           "Content-Type": "text/plain;charset=utf-8",
         },
         body: JSON.stringify(newRSVP),
-      });
-      Swal.fire({
-        icon: "success",
-        title: "Xác Nhận Tham Dự Thành Công",
-        text: "Cảm ơn bạn đã xác nhận tham dự đám cưới của chúng tôi.",
       });
     } catch (error) {
         console.error('Error:', error);

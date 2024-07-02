@@ -99,6 +99,12 @@ async function submitComment() {
   if (name && comment) {
     const newComment = { name, comment, imageURL };
     try {
+      Swal.fire({
+        icon: "success",
+        title: "Gửi Lời Chúc Thành Công",
+        text: "Cảm ơn bạn rất nhiều vì lời chúc mừng đám cưới đầy ý nghĩa!",
+      });
+      
       await fetch(apiUrl, {
         redirect: "follow",
         method: "POST",
@@ -106,11 +112,6 @@ async function submitComment() {
           "Content-Type": "text/plain;charset=utf-8",
         },
         body: JSON.stringify(newComment),
-      });
-      Swal.fire({
-        icon: "success",
-        title: "Gửi Lời Chúc Thành Công",
-        text: "Cảm ơn bạn rất nhiều vì lời chúc mừng đám cưới đầy ý nghĩa!",
       });
     } catch (error) {
       console.log(error);
