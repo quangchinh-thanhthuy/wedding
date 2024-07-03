@@ -6,6 +6,8 @@ async function submitResponse() {
     const tiecCuoiNhaGai = document.getElementById('checkbox-1').checked;
     const tiecCuoiNhaTrai = document.getElementById('checkbox-2').checked;
 
+    if(!name) return;
+    
     const newRSVP = {
       name,
       leAnHoi,
