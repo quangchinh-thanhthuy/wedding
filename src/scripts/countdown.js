@@ -37,5 +37,5 @@ function updateCountdown(containerId, endDate) {
 const endDate1 = new Date("2024-07-13T17:30:00").getTime();
 const endDate2 = new Date("2024-07-28T10:30:00").getTime();
 
-setInterval(() => updateCountdown("countdown1", endDate1), 1000);
+// setInterval(() => updateCountdown("countdown1", endDate1), 1000);
 setInterval(() => updateCountdown("countdown2", endDate2), 1000);
